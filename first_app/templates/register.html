@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% load crispy_forms_tags %} {% block content %}
+
+<form action="" method="post" style="width: 40%; margin: auto">
+  {% for i in messages %}
+  <h6>{{i}}</h6>
+  {% endfor %}
+  <h3 style="text-align: center">{{type}} Here</h3>
+  {% csrf_token %}
+  <!-- {{ form | crispy }} -->
+  {% for fm in form %} {{ fm.label_tag}} {{ fm }} {{ fm.errors }} {% endfor %}
+  <br />
+  <input type="submit" value="Submit" class="btn btn-success" />
+</form>
+
+{% endblock %}

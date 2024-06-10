@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block content %}
+{% for i in messages %}
+<h6>{{i}}</h6>
+{% endfor %}
+<h1>Welcome to Profile </h1>
+
+<div>
+    <a href="{% url 'change_password_with_old' %}" class= "btn btn-warning mx-2">Change Pasword with Old Password</a>
+    <a href="{% url 'change_password_without_old' %}" class="btn btn-danger">Change Pasword with out  Old Password </a>
+</div>
+
+ {% endblock %}
